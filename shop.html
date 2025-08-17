@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baringo Gold Honey - Shop</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff8e1;
+            color: #4b2e0f;
+        }
+        header {
+            background-color: #d4af37;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 { margin: 0; color: #4b2e0f; }
+        nav { display: flex; gap: 20px; }
+        nav a {
+            text-decoration: none;
+            color: #4b2e0f;
+            font-weight: bold;
+            background-color: rgba(255,255,255,0.4);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        nav a:hover { background-color: rgba(255,255,255,0.7); }
+        .shop-section {
+            padding: 40px 20px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+        .shop-section h2 { font-size: 2rem; color: #b68a2c; margin-bottom: 30px; }
+        .products-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+        .product {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: #fff8e1;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+            width: 250px;
+            min-height: 450px;
+            box-sizing: border-box;
+        }
+        .img-wrapper {
+            height: 200px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #f5e8c9;
+            border: 2px solid #d4af37;
+        }
+        .product img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+        .product h3 { font-size: 1.5rem; margin-bottom: 0.5rem; color: #FFD700; }
+        .product p { font-size: 1.2rem; margin-bottom: 1rem; }
+        .btn {
+            display: inline-block;
+            margin-top: auto;
+            padding: 10px 15px;
+            background-color: #d4af37;
+            color: #4b2e0f;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .btn:hover { background-color: #b68a2c; }
+        footer { background-color: #4b2e0f; color: white; text-align: center; padding: 15px; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Baringo Gold Honey</h1>
+    <nav>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="blog.html">Blog</a>
+    </nav>
+</header>
+
+<section class="shop-section">
+    <h2>Our Honey</h2>
+    <div class="products-grid">
+        <div class="product">
+            <div class="img-wrapper">
+                <img src="250g.jpeg.png" onerror="this.src='https://placehold.co/250x200/d4af37/4b2e0f?text=250g+Honey';" alt="250g Honey Jar">
+            </div>
+            <h3>250g Honey Jar</h3>
+            <p>Ksh 400</p>
+            <button class="btn" onclick="addToCart('250g Honey Jar', 400)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <div class="img-wrapper">
+                <img src="500g.jpeg.png" onerror="this.src='https://placehold.co/250x200/d4af37/4b2e0f?text=500g+Honey';" alt="500g Honey Jar">
+            </div>
+            <h3>500g Honey Jar</h3>
+            <p>Ksh 500</p>
+            <button class="btn" onclick="addToCart('500g Honey Jar', 500)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <div class="img-wrapper">
+                <img src="1kg.jpeg.png" onerror="this.src='https://placehold.co/250x200/d4af37/4b2e0f?text=1kg+Honey';" alt="1kg Honey Bottle">
+            </div>
+            <h3>1kg Honey Bottle</h3>
+            <p>Ksh 1000</p>
+            <button class="btn" onclick="addToCart('1kg Honey Bottle', 1000)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <div class="img-wrapper">
+                <img src="5l.jpeg" onerror="this.src='https://placehold.co/250x200/d4af37/4b2e0f?text=5L+Honey';" alt="5kg Honey Bottle">
+            </div>
+            <h3>5kg Honey Bottle</h3>
+            <p>Ksh 4800</p>
+            <button class="btn" onclick="addToCart('5kg Honey Bottle', 4800)">Add to Cart</button>
+        </div>
+    </div>
+</section>
+
+<script>
+function addToCart(productName, price){
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push({name: productName, price: price});
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(productName + " added to cart!");
+}
+</script>
+
+<footer>
+    <p>&copy; 2025 Baringo Gold Honey. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
