@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baringo Gold Honey - Shop</title>
+    <style>
+        /* Base styles for the entire page */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff8e1; /* Light cream background, matching homepage */
+            color: #4b2e0f; /* Dark brown text for general content, matching homepage */
+            box-sizing: border-box;
+        }
+
+        /* Header styles - consistent with homepage */
+        header {
+            background-color: #d4af37; /* Gold */
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: #4b2e0f; /* Dark brown for header title */
+            font-weight: bold;
+        }
+        nav {
+            display: flex;
+            gap: 20px; /* Space between links */
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        nav a {
+            margin-left: 0; /* Reset margin for consistent spacing */
+            text-decoration: none;
+            color: #4b2e0f; /* Dark brown for nav links */
+            font-weight: bold;
+            background-color: rgba(255,255,255,0.4); /* Semi-transparent white background */
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background-color: rgba(255,255,255,0.7); /* More opaque white on hover */
+        }
+
+        /* Shop Section Styles - main content area */
+        .shop-section {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #fff8e1; /* Matches body background */
+            margin: 2rem auto; /* Center and provide vertical spacing */
+            max-width: 1200px; /* Max width for content */
+            border-radius: 10px; /* Consistent rounded corners */
+            box-shadow: 0 3px 6px rgba(0,0,0,0.05); /* Subtle shadow */
+            box-sizing: border-box;
+        }
+        .shop-section h2 {
+            color: #b68a2c; /* Darker gold for section heading */
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+        .products-grid { /* Wrapper for product items using flexbox for layout */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px; /* Space between products */
+        }
+        .product {
+            display: flex; /* Use flexbox for vertical alignment inside product card */
+            flex-direction: column;
+            justify-content: space-between; /* Pushes button to bottom */
+            background: #fff8e1; /* Matches body background for consistency */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.1); /* Standard product card shadow */
+            width: 250px; /* Fixed width for each product card */
+            min-height: 450px; /* Ensures consistent height for all product boxes */
+            box-sizing: border-box; /* Includes padding in width/height calculation */
+        }
+        .img-wrapper {
+            height: 200px; /* Fixed height for uniformity of images */
+            width: 100%;
+            display: flex; /* Flexbox for centering image within wrapper */
+            align-items: center; /* Center image vertically */
+            justify-content: center; /* Center image horizontally */
+            margin-bottom: 1rem;
+            border-radius: 8px; /* Consistent rounded corners for image wrapper */
+            overflow: hidden; /* Ensures image doesn't overflow rounded corners */
+            background: #f5e8c9; /* Light cream background for image area */
+            border: 2px solid #d4af37; /* Gold border around image wrapper */
+            flex-shrink: 0; /* Prevents image wrapper from shrinking */
+        }
+        .product img {
+            max-width: 100%; /* Image scales down if larger than wrapper */
+            max-height: 100%; /* Image scales down if taller than wrapper */
+            object-fit: contain; /* Ensures entire image is visible, maintaining aspect ratio */
+            display: block; /* Removes extra space below image */
+        }
+        .product h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #FFD700; /* Gold for product title */
+        }
+        .product p {
+            font-size: 1.2rem;
+            color: #4b2e0f; /* Dark brown for product price, consistent with theme */
+            margin-bottom: 1rem;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: auto; /* Pushes the button to the bottom if content above is shorter */
+            padding: 10px 15px;
+            background-color: #d4af37; /* Gold button */
+            color: #4b2e0f; /* Dark brown text for button */
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none; /* Removes underline from link */
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #b68a2c; /* Darker gold on hover */
+        }
+
+        /* Footer styles - consistent with homepage */
+        footer {
+            background-color: #4b2e0f; /* Dark brown footer */
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Baringo Gold Honey</h1>
+    <nav>
+        
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="blog.html">Blog</a>
+    </nav>
+</header>
+
+<section id="shop" class="shop-section">
+    <h2>Our Honey</h2>
+    <div class="products-grid">
+        <div class="product">
+            <div class="img-wrapper">
+                <!-- Using placeholder images that match your theme colors -->
+                <img src="250g.jpeg.png" onerror="this.src='https://placehold.co/250x200/d4af37/4b2e0f?text=250ml+Honey';" alt="Baringo Gold 250ml Honey Jar">
+            </div>
+            <h3>250g Honey Jar</h3>
+            <p>Ksh 400</p>
+            <!-- Link to the delivery terms page when 'Add to Cart' is clicked -->
+            <a href="delivery.html" class="btn">Add to Cart</a>
+        </div>
+        <div class="product">
+            <div class="img-wrapper">
+                <img src="500g.jpeg.png" onerror="this.src='https://placehold.co/250x200/d4af37/4b2e0f?text=500ml+Honey';" alt="Baringo Gold 500ml Honey Jar">
+            </div>
+            <h3>500g Honey Jar</h3>
+            <p>Ksh 500</p>
+            <!-- Link to the delivery terms page when 'Add to Cart' is clicked -->
+            <a href="delivery.html" class="btn">Add to Cart</a>
+        </div>
+        <div class="product">
+            <div class="img-wrapper">
+                <img src="1kg.jpeg.png" onerror="this.src='https://placehold.co/250x200/d4af37/4b2e0f?text=1L+Honey';" alt="Baringo Gold 1L Honey Bottle">
+            </div>
+            <h3>1kg Honey Bottle</h3>
+            <p>Ksh 1,000</p>
+            <!-- Link to the delivery terms page when 'Add to Cart' is clicked -->
+            <a href="delivery.html" class="btn">Add to Cart</a>
+        </div>
+        <div class="product">
+            <div class="img-wrapper">
+                <img src="5l.jpeg" onerror="this.src='https://placehold.co/250x200/d4af37/4b2e0f?text=5L+Honey';" alt="Baringo Gold 5L Honey Bottle">
+            </div>
+            <h3>5kg Honey Bottle</h3>
+            <p>Ksh 4,800</p>
+            <!-- Link to the delivery terms page when 'Add to Cart' is clicked -->
+            <a href="delivery.html" class="btn">Add to Cart</a>
+        </div>
+    </div>
+</section>
+<script>
+    // Force redirect if not logged in
+    if (localStorage.getItem('isLoggedIn') !== 'true') {
+        window.location.href = "home.html";
+    }
+</script>
+
+
+<footer>
+    <p>&copy; 2025 Baringo Gold Honey. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

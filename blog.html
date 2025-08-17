@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baringo Gold Honey</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background: #fff8e7;
+            color: #333;
+        }
+
+        header {
+            background: #d4a017;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 40px 20px;
+            background: #fff3d4;
+        }
+
+        .hero h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .content-section {
+            padding: 30px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .blog-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .blog-card {
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .blog-card img {
+            width: 100%;
+            border-radius: 8px;
+            display: block;
+        }
+
+        .blog-card h3 {
+            margin-top: 10px;
+            color: #d4a017;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #d4a017;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Baringo Gold Honey</h1>
+    <nav>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="blog.html">Blog</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Nature’s Gold from the Heart of Baringo</h2>
+    <p>Pure, natural, and delicious honey straight from the source.</p>
+</section>
+
+<section id="blog" class="content-section">
+    <h2>Our Blog</h2>
+    <p>Discover the sweet world of honey through our stories and insights.</p>
+    <div class="blog-preview">
+        
+        <div class="blog-card">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/120cf3b3-6a3e-4443-be62-c7843dcdb648.png" alt="Health benefits of honey">
+            <h3>Health Benefits</h3>
+            <p>Honey isn’t just sweet – it’s packed with natural goodness. Studies show that raw honey can boost your immune system, promote digestion, and improve overall health.</p>
+            <ul>
+                <li>Rich in antioxidants which fight free radicals</li>
+                <li>Helps regulate blood pressure</li>
+                <li>Aids wound healing & sore throat relief</li>
+            </ul>
+        </div>
+        
+        <div class="blog-card">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/acaabac3-637b-480e-a3d6-670964e0482a.png" alt="Bee conservation efforts">
+            <h3>Saving the Bees</h3>
+            <p>Bees are crucial for pollination and our environment. At Baringo Gold Honey, we work hand in hand with local farmers to create bee-friendly habitats.</p>
+            <ul>
+                <li>Training farmers in sustainable beekeeping</li>
+                <li>Planting wildflowers to support bee populations</li>
+                <li>Partnering with conservation groups in Kenya</li>
+            </ul>
+        </div>
+        
+        <div class="blog-card">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d6b602d9-175b-41f6-9d02-b32440f10310.png" alt="Honey harvesting process">
+            <h3>Our Process</h3>
+            <p>Every drop of Baringo Gold Honey is carefully harvested to maintain purity and taste. We follow traditional methods that protect the bees and their hives.</p>
+            <ul>
+                <li>Smoke-free harvesting for less stress on bees</li>
+                <li>Filtering without removing natural enzymes</li>
+                <li>Packaging without additives or preservatives</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    // Prevent access without login
+    if (localStorage.getItem('isLoggedIn') !== 'true') {
+        window.location.href = "index.html"; // redirect to login page
+    }
+</script>
+
+<footer>
+    <p>&copy; 2025 Baringo Gold Honey. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

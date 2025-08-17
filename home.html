@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baringo Gold Honey</title>
+    <link rel="stylesheet" href="baringo.css">
+    <style>
+        /* [ Your existing CSS remains the same — I kept all original styling from your code ] */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff8e1;
+            color: #4b2e0f;
+        }
+        header {
+            background-color: #d4af37;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 { margin: 0; color: #4b2e0f; }
+        nav { display: flex; gap: 20px; }
+        nav a {
+            text-decoration: none;
+            color: #4b2e0f;
+            font-weight: bold;
+            background-color: rgba(255,255,255,0.4);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        nav a:hover { background-color: rgba(255,255,255,0.7); }
+        #logout-link { color: #d9534f; }
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                              url('https://images.unsplash.com/photo-1571753452809-268ca1d9d3c6');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        .hero h2 { font-size: 2.5rem; color: #ffd700; }
+        .auth-container {
+            background-color: #fff8e1;
+            max-width: 400px;
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        label { font-weight: bold; color: #4b2e0f; }
+        input[type="text"], input[type="email"], input[type="tel"] {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 0.5rem;
+        }
+        .btn-primary {
+            background-color: #d4af37;
+            color: #4b2e0f;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+        }
+        .btn-primary:hover { background-color: #b68a2c; }
+        footer {
+            background-color: #4b2e0f;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Baringo Gold Honey</h1>
+    <nav>
+        <a href="shop.html" class="protected-link"></a>
+        <a href="about.html" class="protected-link"></a>
+        <a href="contact.html" class="protected-link"></a>
+        <a href="blog.html" class="protected-link"></a>
+       
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Nature’s Gold from the Heart of Baringo</h2>
+    <p>Pure, natural, and delicious honey straight from the source.</p>
+</section>
+
+<section class="auth-section">
+    <div class="auth-container" id="auth-main-container">
+        <h1>Welcome!</h1>
+        <p id="auth-status-message">Please log in to continue.</p>
+
+        <!-- Updated Login Form -->
+        <form id="login-form-submit">
+            <label for="loginName">Name:</label>
+            <input type="text" id="loginName" name="loginName" placeholder="Your full name" required>
+
+            <label for="loginEmail">Email:</label>
+            <input type="email" id="loginEmail" name="loginEmail" placeholder="Your email address" required>
+
+            <label for="loginPhoneNumber">Phone Number:</label>
+            <input type="tel" id="loginPhoneNumber" name="loginPhoneNumber" placeholder="Your phone number" required>
+
+            <button type="submit" class="btn-primary">Proceed to Shop</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Baringo Gold Honey. All rights reserved.</p>
+    
+</footer>
+
+<script>
+    const loginFormSubmit = document.getElementById('login-form-submit');
+    const visitorCountSpan = document.getElementById('visitor-count');
+
+    function updateVisitorCount() {
+        let visitorCount = localStorage.getItem('siteVisitorCount');
+        visitorCount = visitorCount ? parseInt(visitorCount) + 1 : 1;
+        localStorage.setItem('siteVisitorCount', visitorCount);
+        visitorCountSpan.textContent = visitorCount;
+    }
+
+    loginFormSubmit.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(loginFormSubmit);
+
+        fetch('save_user.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(res => res.text())
+        .then(data => {
+            if (data.trim() === 'success') {
+                localStorage.setItem('isLoggedIn', 'true');
+                window.location.href = 'shop.html';
+            } else {
+                alert('Error saving user. Please try again.');
+            }
+        })
+        .catch(err => console.error(err));
+    });
+
+    window.addEventListener('load', updateVisitorCount);
+</script>
+
+</body>
+</html>
